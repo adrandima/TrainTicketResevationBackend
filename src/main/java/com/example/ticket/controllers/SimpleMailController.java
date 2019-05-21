@@ -24,23 +24,19 @@ public class SimpleMailController {
     public String sendMail(@PathVariable("email") String email) {
         MimeMessage message = sender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
-        String pinNumber = genarateRandomNumber();
+
         try {
             helper.setTo(email);
             helper.setText("Pin Number:)");
-            helper.setSubject("Your Pin Number Is: "+pinNumber);
+            helper.setSubject("Payment Successfully");
         } catch (MessagingException e) {
             e.printStackTrace();
             return "Error while sending mail ..";
         }
         sender.send(message);
 
-        return pinNumber;
+        return "success";
     }
 
-    private String genarateRandomNumber(){
-        int randomPIN = (int)(Math.random()*9000)+1000;
-        String pin = String.valueOf(randomPIN);
-        return pin;
-    }
+
 }
