@@ -2,14 +2,22 @@ package com.example.ticket.model;
 
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Card {
     @Id
     private String cardNumber;
+    @NotEmpty
     private String name;
+    @NotEmpty
     private String nic;
+    @NotEmpty
     private String expireMonth;
+    @NotEmpty
     private String expireYear;
+    @NotEmpty
     private int cvcCode;
+
     private double amount;
 
     public Card(String cardNumber, String name, String nic, String expireMonth, String expireYear, int cvcCode, double amount) {

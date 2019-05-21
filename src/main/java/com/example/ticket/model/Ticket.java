@@ -3,16 +3,26 @@ package com.example.ticket.model;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Ticket {
     @Id
     private ObjectId _id;
+
     private String nic;
+
     private String name;
+
     private String train;
+
     private int noOfTickets;
+
     private String classType;
+
     private String start;
+
     private String destination;
+
     private double cost;
 
     public Ticket(ObjectId _id, String nic, String name, String train, int noOfTickets, String classType, String start, String destination, double cost) {

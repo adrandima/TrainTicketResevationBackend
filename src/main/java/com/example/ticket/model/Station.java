@@ -1,7 +1,11 @@
 package com.example.ticket.model;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Station {
+    @NotEmpty
     private String station;
+    @NotEmpty
     private double price;
 
     public Station(String station, double price) {

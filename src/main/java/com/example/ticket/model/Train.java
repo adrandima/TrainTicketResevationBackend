@@ -4,6 +4,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.GeneratedValue;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 public class Train {
@@ -12,11 +13,17 @@ public class Train {
     private String _id;*/
     @Id
     private String trainNo;
+    @NotEmpty
     private String trainName;
+    @NotEmpty
     private int seats;
+    @NotEmpty
     private String start;
+    @NotEmpty
     private String destination;
+    @NotEmpty
     private String trainDate;
+    @NotEmpty
     private String startTime;
     private List<Station> stopStations;
 
